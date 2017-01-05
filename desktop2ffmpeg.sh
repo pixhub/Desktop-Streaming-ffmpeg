@@ -13,4 +13,4 @@ read FILE
 
 $FFMPEG -f x11grab -s $INRES -r $FPS -i :0.0 \
 -f alsa -i pulse -vcodec libx264 \
-/home/account_name/Videos/$FILE.mpg
+~/Videos/$FILE.mpg
