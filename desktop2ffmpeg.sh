@@ -1,8 +1,8 @@
 #!/bin/bash
 
-usage() { echo "Usage: $0 [-s <screen resolution>] [-r <FPS> ] [-out <path and file name to save> ]" 1>&2; exit 1; }
+usage() { echo "Usage: $0 [-s <screen resolution>] [-r <FPS> ] [-o <path and file name to save> ]" 1>&2; exit 1; }
 
-while getopts ":s:r:" o; do
+while getopts ":s:r:o:" o; do
     case "${o}" in
         s)
             RES=${OPTARG}
@@ -10,7 +10,7 @@ while getopts ":s:r:" o; do
 	r)
 	    FPS=${OPTARG}
 	    ;;
-	out)
+	o)
 	    FILE=${OPTARG}
 	    ;;
         *)
