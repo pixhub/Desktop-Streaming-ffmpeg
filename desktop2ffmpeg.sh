@@ -33,6 +33,6 @@ echo "Save file path : $FILE"
 
 FFMPEG=/usr/bin/ffmpeg
 
-ffmpeg -f x11grab -s $RES -r $FPS -i :0.0 \
+$FFMPEG -f x11grab -s $RES -r $FPS -i :0.0 \
 -f alsa -i pulse -vcodec libx264 \
 $FILE.mpg
