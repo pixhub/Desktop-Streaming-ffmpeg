@@ -27,7 +27,9 @@ if [ -z "$FILE" ];
   then FILE=~/video1
 fi
 
-echo "la resolution choisie est $RES"
+echo "Chosen resolution : $RES"
+echo "Chosen frame rate : $FPS"
+echo "Save file path : $FILE"
 
 FFMPEG=/usr/bin/ffmpeg
 
