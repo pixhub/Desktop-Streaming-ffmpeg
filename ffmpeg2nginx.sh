@@ -49,6 +49,8 @@ echo "Streaming path = rtmp://$IP:1935/live"
 
 FFMPEG="/usr/bin/ffmpeg"
 
+QUAL=ultrafast
+
 $FFMPEG -f x11grab -s $INRES -r $FPS -i :0.0 \
 -f alsa -ac 2 -i pulse -vcodec libx264 \
 -s $OUTRES -strict -2 -acodec aac \
