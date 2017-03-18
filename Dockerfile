@@ -11,5 +11,5 @@ FROM ubuntu:16.04
         RUN wget http://nginx.org/download/nginx-1.10.2.tar.gz
         RUN tar xzvf nginx-1.10.2.tar.gz
         WORKDIR /tmp/nginx-1.10.2
-        RUN ./configure --with-http_ssl_module --add-module=/tmp//nginx-rtmp-module && make && make install
+        RUN ./configure --with-http_ssl_module --add-module=/tmp/nginx-rtmp-module && make && make install
         CMD "nginx"
