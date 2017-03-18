@@ -12,4 +12,8 @@ FROM ubuntu:16.04
         RUN tar xzvf nginx-1.10.2.tar.gz
         WORKDIR /tmp/nginx-1.10.2
         RUN ./configure --with-http_ssl_module --add-module=/tmp/nginx-rtmp-module && make && make install
+        RUN mkdir /HLS
+        RUN mkdir /HLS/live
+        ADD nginx.conf /usr/local/nginx/conf/nginx.conf
+        ADD index.html /usr/local/nginx/html/index.html
         CMD "nginx"
