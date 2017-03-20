@@ -16,4 +16,6 @@ FROM ubuntu:16.04
         RUN mkdir /HLS/live
         ADD nginx.conf /usr/local/nginx/conf/nginx.conf
         ADD index.html /usr/local/nginx/html/index.html
+        RUN rm -rf nginx-1.10.2 nginx-rtmp-module nginx-1.10.2.tar.gz
+        RUN apt-get remove -y wget git
         CMD "nginx"
