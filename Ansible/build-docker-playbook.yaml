@@ -1,0 +1,9 @@
+---
+- hosts: server
+  tasks:
+  - name: upload Dockerfile Dir
+    copy: src=Dockerfile dest=/home/nunes mode=0755
+  - name: build docker image
+    action: shell docker build -t docker-nginx /home/nunes/Dockerfile
+  - name: start docker-nginx container
+    action: shell docker run -d -p 80:80 -p 1935:1935 docker-nginx nginx -g "daemon off;"
