@@ -1,0 +1,68 @@
+<DOCTYPE! html>
+<html>
+<head>
+<script src="//releases.flowplayer.org/7.0.0/flowplayer.min.js"></script>
+<script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script>
+</head>
+
+<script language=JavaScript>
+window.onload = function () {
+  flowplayer("#hlsjslive", {
+    splash: true,
+    embed: false,
+    ratio: 9/16,
+    clip: {
+      hlsjs: {
+        // slightly better behaviour for this problem stream
+        smoothSwitching: false
+      },
+      live: true,
+      sources: [
+        { type: "application/x-mpegurl",
+          src: "http://localhost/live/index.m3u8" }
+      ]
+    }
+  });
+};
+</script>
+<style>
+body{ background-color:#EEE; }
+H1, H2{
+color:black;
+line-height:40px;
+padding:0px;
+margin:0px;
+}
+#hlsjslive{position:absolute; top:50px; left:0px; right:0px; max-height:400px;}
+.fp-player{width:100%; height:20px;}
+.fp-engine{width:100%;}
+.streaming{width:100%;}
+.info{margin-top:500px;}
+.fp-help, .fp-menu{
+    opacity:0;
+}
+.fp-ui{
+        dislpay:inline-block;
+        width:100%;
+        font-size:0px;
+        padding:10px;
+        margin:0px;
+        color:white;
+        z-index:99999;
+}
+.fp-ratio{
+    padding-top:0px !important;
+}
+.fp-play-rounded-fill{z-index:1; opacity:1;}
+svg{position:absolute; margin:auto; top:-50px; height:40px;
+    padding:5px; display:block; right:10px; opacity:0;}
+</style>
+<body>
+<div class="streaming">
+    <h2 id="live">Live Stream</h2>
+
+    <div id="hlsjslive"></div>
+</div>
+</body>
+</html>
+Choose Files
