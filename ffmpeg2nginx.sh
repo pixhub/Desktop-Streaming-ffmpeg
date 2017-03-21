@@ -1,3 +1,7 @@
+#!/bin/bash
+
+usage() { echo "Usage: $0 [ -s <screen resolution> ] [ -r <FPS> ] [ -o <output resolution> ] [ -i <IP where to stream> ] [-h <help> ]" 1>&2; exit 1; }
+
 while getopts ":s:r:o:i:h" o; do
     case "${o}" in
         s)
